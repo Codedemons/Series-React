@@ -17,11 +17,11 @@ const Series = () => {
         ]);
 
         if (!productResponse.ok) {
-          throw new Error('Error fetching product data from TVMaze API');
+          throw new Error('Error al cargar la series de TVMaze API');
         }
 
         if (!charactersResponse.ok) {
-          throw new Error('Error fetching characters data from TVMaze API');
+          throw new Error('Error al cargar la descripciones de TVMaze API');
         }
 
         const productData = await productResponse.json();
@@ -30,7 +30,7 @@ const Series = () => {
         setProduct(productData);
         setCharacters(charactersData);
       } catch (error) {
-        console.error('Error fetching data from TVMaze API:', error);
+        console.error('Error de carga de datos TVMaze:', error);
       }
     };
 
